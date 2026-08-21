@@ -3,7 +3,7 @@ const { pool } = require("./db");
 
 async function changePassword() {
     const username = "admin";
-    const newPassword = "SignalRegiment0821";
+    const newPassword = add new password here;
 
     try {
         const hashedPassword = await bcrypt.hash(newPassword, 12);
