@@ -1,0 +1,18 @@
+{
+  "name": "personnel-management-login",
+  "version": "1.0.0",
+  "description": "Personnel Management System login connected to PostgreSQL",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "create-admin": "node backend/create-admin.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "pg": "^8.23.0"
+  }
+}

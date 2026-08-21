@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Personnel | Signal Regiment</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="dashboard form-page">
+            <a class="back-link" href="index.html">&larr; Back to personnel dashboard</a>
+
+            <header class="topbar form-header">
+                <div>
+                    <p class="eyebrow">Signal Regiment</p>
+                    <h1>Add New Personnel</h1>
+                </div>
+            </header>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Personnel Information</h2>
+                </div>
+
+                <form class="personnel-form" id="personnelForm" action="#" method="post">
+                    <div class="form-grid">
+                        <label class="form-field">
+                            Employee ID
+                            <input name="employeeId" type="text" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" title="Employee ID must contain exactly 6 digits" required>
+                        </label>
+                        <label class="form-field">
+                            First Name
+                            <input name="firstName" type="text" maxlength="250" required>
+                        </label>
+                        <label class="form-field">
+                            Middle Name
+                            <input name="middleName" type="text" maxlength="250">
+                        </label>
+                        <label class="form-field">
+                            Last Name
+                            <input name="lastName" type="text" maxlength="250" required>
+                        </label>
+                        <label class="form-field">
+                            Date of Birth
+                            <input name="dateOfBirth" type="date" required>
+                        </label>
+                        <label class="form-field">
+                            Gender
+                            <select name="gender" required>
+                                <option value="" selected disabled>Select gender</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </label>
+                        <label class="form-field">
+                            Contact Number
+                            <input name="contactNumber" type="tel" inputmode="numeric" maxlength="250" pattern="[0-9]+" required>
+                        </label>
+                        <label class="form-field">
+                            Email
+                            <input name="email" type="email" maxlength="250" required>
+                        </label>
+                        <label class="form-field">
+                            Date Hired
+                            <input name="dateHired" type="date" required>
+                        </label>
+                        <label class="form-field">
+                            Department
+                            <select name="department" id="department" required>
+                                <option value="" selected disabled>Select department</option>
+                            </select>
+                        </label>
+                        <label class="form-field">
+                            Position
+                            <select name="position" id="position" required>
+                                <option value="" selected disabled>Select position</option>
+                            </select>
+                        </label>
+                        <label class="form-field">
+                            Employment Status
+                            <select name="employmentStatus" id="employmentStatus" required>
+                                <option value="" selected disabled>Select status</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <a class="secondary-btn" href="index.html">Cancel</a>
+                        <button class="primary-btn" type="submit">Save Personnel</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <script src="add-personnel.js"></script>
+    </body>
+</html>

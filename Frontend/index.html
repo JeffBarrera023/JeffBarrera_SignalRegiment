@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signal Regiment Personnel</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="dashboard">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Signal Regiment</p>
+                    <h1>Personnel Management Dashboard</h1>
+                </div>
+                <button class="primary-btn" id="addPersonnelButton" type="button">+ Add Personnel</button>
+            </header>
+
+            <div class="top-panels">
+                <section class="panel stats-panel">
+                    <div class="panel-header">
+                        <h2>Overall Numbers</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Total Employees</span>
+                            <strong class="stat-value" id="totalEmployees">0</strong>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Active</span>
+                            <strong class="stat-value" id="activeEmployees">0</strong>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Trainee</span>
+                            <strong class="stat-value" id="traineeEmployees">0</strong>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Resigned</span>
+                            <strong class="stat-value" id="resignedEmployees">0</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel chart-panel">
+                    <div class="panel-header">
+                        <h2>Breakdown Overview</h2>
+                    </div>
+
+                    <div class="chart-controls">
+                        <label>
+                            <span>View By</span>
+                            <select id="chartBreakdown">
+                                <option value="department">Department</option>
+                                <option value="status">Employee Status</option>
+                                <option value="position">Position</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="chart-layout">
+                        <div class="pie-chart" aria-label="Personnel distribution chart">
+                            <span class="chart-center">0%</span>
+                        </div>
+
+                        <ul class="legend"></ul>
+                    </div>
+                </section>
+            </div>
+
+            <section class="panel list-panel">
+                <div class="panel-header list-header">
+                    <h2>Employee List</h2>
+                    <div class="filters">
+                        <label>
+                            <span>Search</span>
+                            <input id="employeeSearch" type="text" placeholder="Name or ID" aria-label="Search employee by name or ID">
+                        </label>
+                        <label>
+                            <span>Department</span>
+                            <select id="departmentFilter">
+                                <option value="all">All</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Intelligence">Intelligence</option>
+                                <option value="Logistics">Logistics</option>
+                                <option value="Support">Support</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Sort</span>
+                            <select id="sortBy">
+                                <option value="name">Name</option>
+                                <option value="department">Department</option>
+                                <option value="level">Level</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Employee</th>
+                                <th>Department</th>
+                                <th>Level</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="pagination" aria-label="Employee list pagination">
+                    <button class="table-btn" id="previousPage" type="button">Previous</button>
+                    <span id="pageStatus" aria-live="polite">Page 1 of 1</span>
+                    <button class="table-btn" id="nextPage" type="button">Next</button>
+                </div>
+
+                <div id="employeeDetails" class="employee-detail">
+                    Select View/Edit for an employee to view details.
+                </div>
+            </section>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
