@@ -35,6 +35,28 @@ async function checkAuthentication() {
     }
 }
 
+const logoutButton = document.getElementById("logoutButton");
+
+logoutButton.addEventListener("click", async () => {
+    logoutButton.disabled = true;
+    logoutButton.textContent = "Logging out...";
+
+    try {
+        const response = await fetch("/api/auth/logout", { method: "POST" });
+
+        if (!response.ok) {
+            throw new Error("Unable to logout.");
+        }
+
+        window.location.href = "/login.html";
+    } catch (error) {
+        console.error("Logout error:", error);
+        window.alert(error.message);
+        logoutButton.disabled = false;
+        logoutButton.textContent = "Log Out";
+    }
+});
+
 async function initializeDashboard() {
 
     const user =
